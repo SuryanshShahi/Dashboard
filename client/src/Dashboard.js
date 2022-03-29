@@ -21,7 +21,7 @@ export class Dashboard extends Component {
         this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);
         window.addEventListener('load', this.updateWindowDimensions);
-        axios.get('http://localhost:5000/')
+        axios.get('http://localhost:5000/Dashboard')
             .then(res => (
                 this.setState({ dashboardData: res.data })
             ))
