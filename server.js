@@ -30,6 +30,15 @@ const apiData = require("./routes/api");
 app.use("/dashboard", dashboardRoutes);
 app.use("/api", apiData);
 
+if (process.env.NODE_ENV == "production") {
+  app.use(express.static("client/build"));
+  const path = require("path");
+  app.get("*", (req, res) => {
+      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  })
+}
+
+
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
