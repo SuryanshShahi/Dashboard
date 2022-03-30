@@ -21,7 +21,7 @@ export class Dashboard extends Component {
         this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);
         window.addEventListener('load', this.updateWindowDimensions);
-        axios.get('http://localhost:3000/')
+        axios.get('https://dashboard06.herokuapp.com/')
             .then(res => (
                 this.setState({ dashboardData: res.data })
             ))
